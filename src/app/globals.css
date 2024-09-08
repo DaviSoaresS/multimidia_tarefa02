@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variáveis de cores */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* Estilo do Body */
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.conteiner {
+  display: flex;
+  width: 100%;
+  height: 100%; 
+}
+
+.central {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 250px); /* Espaço restante, após sidebar */
+  margin-left: 250px; /* Evita sobreposição com a sidebar */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.musicposter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 100px;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px; /* Controla a largura máxima do poster */
+}
+
+.ImagemMusica {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #1b1b1b;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.tituloSidebar {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #34495e;
+  padding-bottom: 0.5rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar li:hover {
+  background-color: #34495e;
+}
+
+.nomemusica {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+}
+
+.autormusica {
+  font-size: 1rem;
+  color: #bdc3c7;
+}
+
+/* Estilo do Music Player */
+.playerMusic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: calc(100% - 250px); /* Ajuste de largura com a sidebar */
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 450px;
+}
+
+.playerMusic button {
+  margin-bottom: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.progress-container {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+.progress-bar::-webkit-progress-bar {
+  background: #ddd;
+}
+
+.progress-bar::-webkit-progress-value {
+  background: #b700ff;
+}
