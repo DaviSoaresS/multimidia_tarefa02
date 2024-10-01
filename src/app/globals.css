@@ -144,6 +144,14 @@ body {
   cursor: pointer;
 }
 
+.playerMusic button .botaoIdaeVolta {
+  margin: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white; /* Torna os botões visíveis no fundo escuro */
+}
+
 .progress-container {
   width: 100%;
   max-width: 600px;
@@ -164,3 +172,4 @@ body {
 .progress-bar::-webkit-progress-value {
   background: #b700ff;
 }
+
